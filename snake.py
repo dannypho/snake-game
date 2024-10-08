@@ -40,6 +40,10 @@ class Snake:
             self.previous_direction = "Up"
         
         elif self.move_down is True and self.rect.bottom < self.settings.screen_height:
+            if self.previous_direction == "Right" and self.rect.right % 20 != 0:
+                self.x += 20 - (self.rect.right % 20)
+            elif self.previous_direction == "Left" and self.rect.right % 20 != 0:
+                self.x -= (self.rect.right % 20)
             self.y += self.settings.snake_speed
             self.previous_direction = "Down"
 

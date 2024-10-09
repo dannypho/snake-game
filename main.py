@@ -2,6 +2,7 @@ import sys
 import pygame
 from settings import Settings
 from snake import Snake
+from apple import Apple
 
 class Game:
 
@@ -13,7 +14,8 @@ class Game:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Snake")
 
-        self.snake = Snake(self)        
+        self.snake = Snake(self)
+        self.apple = Apple(self)        
 
     def run_game(self):
 
@@ -28,6 +30,7 @@ class Game:
             self.snake.update()
             self.screen.fill(self.settings.bg_color)
             self.snake.blitme()
+            self.apple.blitme()
             self._draw_grid()
 
             pygame.display.flip()

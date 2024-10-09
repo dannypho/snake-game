@@ -12,4 +12,4 @@ class Settings:
         self.line_color = (255, 255, 255)
 
         # Snake settings
-        self.snake_speed = 1
+        self.snake_speed = 0.7

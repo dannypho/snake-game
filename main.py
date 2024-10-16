@@ -81,21 +81,11 @@ class Game:
             self.snake.move_left = True
 
     def _check_snake_boundary_collision(self):
-        if self._check_boundary_collision():
+        # Check boundary collision
+        if self.snake.rect.left < 0 or self.snake.rect.top < 0 or self.snake.rect.right > self.settings.screen_width or self.snake.rect.bottom > self.settings.screen_height:
             self._reset_game()
             self.game_stats.game_active = False
-
-    def _check_boundary_collision(self):
-        """"Returns true if snake head collides with boundary of the screen"""
-        if self.snake.rect.left < 0:
-            return True
-        if self.snake.rect.top < 0:
-            return True
-        if self.snake.rect.right > self.settings.screen_width:
-            return True
-        if self.snake.rect.bottom > self.settings.screen_height:
-            return True
-
+            
     def _check_apple_collision(self):
         """Relocates apple if snake collides with apple"""
         if self.snake.rect.colliderect(self.apple.rect):

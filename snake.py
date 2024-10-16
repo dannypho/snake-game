@@ -32,6 +32,8 @@ class Snake:
 
     def reset(self):
         self.rect.center = (250, 310)
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
 
         self.move_up = False
         self.move_down = False

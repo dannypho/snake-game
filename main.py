@@ -36,7 +36,8 @@ class Game:
                 if event.type == pygame.QUIT:
                     sys.exit()
                 elif event.type == pygame.KEYDOWN:
-                    self.game_stats.game_active = True
+                    if not self.game_stats.game_active:
+                        self.game_stats.game_active = True
                     self._check_keydown_events(event)
 
     def _update_screen(self):
@@ -83,6 +84,7 @@ class Game:
     def _check_snake_boundary_collision(self):
         if self._check_boundary_collision():
             self.game_stats.game_active = False
+            self._reset_game()
 
     def _check_boundary_collision(self):
         """"Returns true if snake head collides with boundary of the screen"""
@@ -94,6 +96,7 @@ class Game:
             return True
         if self.snake.rect.bottom > self.settings.screen_height:
             return True
+        return False
 
     def _check_apple_collision(self):
         """Relocates apple if snake collides with apple"""

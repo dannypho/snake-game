@@ -26,8 +26,6 @@ class Snake:
         self.move_right = False
         self.move_left = False
 
-        self.previous_direction = None
-
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
 
@@ -57,8 +55,6 @@ class Snake:
         self.move_down = False
         self.move_right = False
         self.move_left = False
-
-        self.previous_direction = None
 
         self.body_segments.clear()
         for i in range(self.body_length):

@@ -1,6 +1,6 @@
 # Snake Game with Pygame
 
-A custom implementation of the classic Snake game built using Python and Pygame. This project features dynamic snake growth, grid-based movement, and collision detection.
+A personal implementation of the classic Snake game built using Python and Pygame. This project features dynamic snake growth, grid-based movement, and collision detection.
 
 ## Features
 
